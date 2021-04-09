@@ -134,7 +134,6 @@ import static org.hibernate.tool.hbm2ddl.SchemaExport.Action;
         @Override public CryptoRepository repository() {
             return Crypto.REPOSITORY();
         }
-    
         @Override public PlatformTransactionManager platformTransactionManager() {
             return Crypto.TRANSACTIONAL().platformTransactionManager();
         }
