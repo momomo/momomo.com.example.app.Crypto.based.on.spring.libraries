@@ -12,7 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class PUBLIC_STATIC_VOID_MAIN {
     /////////////////////////////////////////////////////////////////////
-    // Spring bullshit hijacking our entire Java platform and now we have to jump hoops from this moment forward just because we are forced to inject, and let Spring auto configure for us. Everything basically now has to rely on Spring and our Java environment is reduced to shit, literally. Our entire code is now affected, and we have to adjust our code to fit into Spring. Stop injecting folks. It is a nightmare.  
+    // Spring hijacking our entire Java platform and now we have to jump hoops from this moment forward just because we are forced to inject, and let Spring auto configure for us. Everything basically now has to rely on Spring and our Java environment is reduced to ****, literally. Our entire code is now affected, and we have to adjust our code to fit into Spring.   
     public static final AnnotationConfigApplicationContext CONTEXT = new AnnotationConfigApplicationContext("momomo.com.example.app");
     /////////////////////////////////////////////////////////////////////
     
