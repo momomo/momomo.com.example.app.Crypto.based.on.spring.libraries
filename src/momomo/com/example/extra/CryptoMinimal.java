@@ -29,13 +29,11 @@ import static momomo.com.example.extra.PUBLIC_STATIC_VOID_MAIN.CONTEXT;
     /////////////////////////////////////////////////////////////////////
     
     public static final class CryptoDatabase implements $DatabasePostgres {
-        @Override
-        public String name() {
-            return "Crypto_database_name_in_postgres";  // This database will be created in postgres if it does not exist already
+        @Override public String name() {
+            return "crypto_database_name_based_on_spring_libraries";  // This database will be created in postgres if it does not exist already
         }
-        
-        @Override
-        public String password() {
+    
+        @Override public String password() {
             return "postgres";
         }
     }
@@ -64,19 +62,19 @@ import static momomo.com.example.extra.PUBLIC_STATIC_VOID_MAIN.CONTEXT;
     
     /////////////////////////////////////////////////////////////////////
     
+    /**
+     * Note, both a repository and a transactional instance class in one! 
+     */
     @Component public static final class CryptoTransactionalRepository implements $EntityManagerRepository, $TransactionalSpring {
-        
-        @PersistenceContext(name = "Crypto.persistence.unit")
-        EntityManager entityManager;
-        @Override public EntityManager entityManager() { 
+        @PersistenceContext(name = "Crypto.persistence.unit") 
+        EntityManager entityManager; @Override public EntityManager entityManager() { 
             return entityManager; 
         }
         
         ///////////
         
         @Resource(name = "Crypto.transaction.unit")
-        PlatformTransactionManager platformTransactionManager;
-        @Override public PlatformTransactionManager platformTransactionManager() { 
+        PlatformTransactionManager platformTransactionManager; @Override public PlatformTransactionManager platformTransactionManager() { 
             return platformTransactionManager; 
         }
     }
