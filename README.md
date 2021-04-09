@@ -472,35 +472,6 @@ tx.execute(()-> {
 }, false /** don't commit **/ );
 ```                                      
 
-```java
-// More options made visible
-                                      
-requireOptions()
-    .timeout(1000)
-
-    // Notice the withConnection option being used! Full access! 
-    .withConnection((java.sql.Connection connection) -> {
-        connection.setReadOnly(true);
-        connection.setCatalog("catalog");
-        connection.setTransactionIsolation(1);
-        connection.clearWarnings();
-        connection.createStatement();
-        connection.setTypeMap(new HashMap<>());
-        connection.setHoldability(1);
-        connection.setSavepoint();
-        // ...
-    })
-    .create()
-    .execute(tx -> {
-        tx.autocommit(false);
-
-        save(entity);
-
-        tx.commit();
-    })
-;
-```                                                                                                                              
-
 ### `Part 4` - **[`Stellar.java`](https://github.com/momomo/momomo.com.example.app.Crypto.based.on.spring.libraries/tree/master/src/momomo/com/example/app/entities/Stellar.java)**  
 
 While in **[`Bitcoin`](https://github.com/momomo/momomo.com.example.app.Crypto.based.on.spring.libraries/tree/master/src/momomo/com/example/app/entities/Bitcoin.java)**, **[`Etherum`](https://github.com/momomo/momomo.com.example.app.Crypto.based.on.spring.libraries/tree/master/src/momomo/com/example/app/entities/Etherun.java)**, **[`Polkadot`](https://github.com/momomo/momomo.com.example.app.Crypto.based.on.spring.libraries/tree/master/src/momomo/com/example/app/entities/Polkadot.java)** services, we required the transaction inside the insert method, in **[`Stellar`](https://github.com/momomo/momomo.com.example.app.Crypto.based.on.spring.libraries/tree/master/src/momomo/com/example/app/entities/Stellar.java)**, we no longer make use of `requireTransaction()` there because we figured it was better design to *place that burden* on the caller to know the call needs a transaction to reduce boiler plate further.
