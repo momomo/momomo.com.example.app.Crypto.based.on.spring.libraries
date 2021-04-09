@@ -30,7 +30,7 @@ import static momomo.com.example.extra.PUBLIC_STATIC_VOID_MAIN.CONTEXT;
     
     public static final class CryptoDatabase implements $DatabasePostgres {
         @Override public String name() {
-            return "crypto_database_name_based_on_spring_libraries";  // This database will be created in postgres if it does not exist already
+            return "crypto_database_name_based_on_xxxxx_libraries";  // This database will be created in postgres if it does not exist already
         }
     
         @Override public String password() {
