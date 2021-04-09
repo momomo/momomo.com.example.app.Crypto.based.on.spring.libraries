@@ -422,13 +422,6 @@ try {
 ```                                 
 
 ```java
-// We can get access to the actual `session` and retain 100% control
-                   
-Session s1 = requireSession();
-Session s2 = newSession();
-```                                            
-
-```java
 // We can build the transaction properties and set various things ourselves
 
 requireOptions()
